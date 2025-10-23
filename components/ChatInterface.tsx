@@ -105,7 +105,8 @@ export default function ChatInterface({
 
         {displayMessages.map((message, index) => {
           // Check if this is a tool call message (assistant message with toolCalls and no content)
-          const isToolCall = message.role === "assistant" && message.toolCalls && !message.content?.trim();
+          const contentText = typeof message.content === 'string' ? message.content : '';
+          const isToolCall = message.role === "assistant" && message.toolCalls && !contentText.trim();
 
           if (isToolCall && message.toolCalls) {
             return (
