@@ -148,7 +148,9 @@ export default function ChatInterface({
                 }`}>
                   {message.role === "user" ? "You" : "Assistant"}
                 </div>
-                <div className="whitespace-pre-wrap break-words text-base">{message.content}</div>
+                <div className="whitespace-pre-wrap break-words text-base">
+                  {typeof message.content === 'string' ? message.content : JSON.stringify(message.content)}
+                </div>
               </div>
             </div>
           );
