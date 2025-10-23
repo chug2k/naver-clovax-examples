@@ -80,7 +80,7 @@ export default function LessonPlanPage() {
                 <h4 className="font-semibold text-black mb-2">5 min: Welcome & Context (Lecture)</h4>
                 <ul className="list-disc list-inside space-y-1 text-black ml-4">
                   <li>Introduce ClovaX as Naver's LLM platform</li>
-                  <li>Explain available models: HCX-003 (chat) and HCX-005 (vision)</li>
+                  <li>Explain available models: HCX-005 (multimodal - vision + text) and HCX-007 (text-only with thinking capabilities)</li>
                   <li>Overview of Chat Completions API architecture</li>
                   <li>Discuss real-world use cases</li>
                 </ul>
@@ -179,7 +179,8 @@ export default function LessonPlanPage() {
                 <h4 className="font-semibold text-black mb-2">8 min: Multimodal AI Concepts (Lecture)</h4>
                 <ul className="list-disc list-inside space-y-1 text-black ml-4">
                   <li>Introduction to vision-language models</li>
-                  <li>HCX-005 model capabilities and limitations</li>
+                  <li>HCX-005: Multimodal model (vision + text) - can process both images and text</li>
+                  <li>HCX-007: Text-only model with extended thinking/reasoning capabilities</li>
                   <li>Image input formats: URLs vs data URIs (base64)</li>
                   <li>Message content structure for multimodal requests</li>
                   <li>Use cases: OCR, image understanding, document analysis</li>
@@ -193,7 +194,7 @@ export default function LessonPlanPage() {
                     <p className="font-medium mb-1">1. Review actions.ts (7 min):</p>
                     <ul className="list-disc list-inside ml-4 space-y-1">
                       <li><strong>analyzeReceipt()</strong>: Single-call vision analysis</li>
-                      <li>Using HCX-005 model instead of default HCX-003</li>
+                      <li>Using HCX-005 model (supports both vision and text)</li>
                       <li>Message content array with both text and image_url parts</li>
                       <li>dataUri structure: Must include full data:image/...;base64, prefix</li>
                       <li>Response parsing: Extract text from content array</li>
@@ -238,7 +239,7 @@ export default function LessonPlanPage() {
                 <h4 className="font-semibold text-black mb-2">5 min: Key Takeaways Review (Discussion)</h4>
                 <ul className="list-disc list-inside space-y-1 text-black ml-4">
                   <li>Compare and contrast: Tool calling vs single-call vision</li>
-                  <li>When to use HCX-003 vs HCX-005</li>
+                  <li>Model selection: HCX-005 (multimodal) vs HCX-007 (text with thinking)</li>
                   <li>Best practices: Error handling, API key security, rate limiting</li>
                   <li>Production considerations: Costs, latency, scaling</li>
                 </ul>
@@ -285,6 +286,7 @@ export default function LessonPlanPage() {
                 <li><strong>"Can I use this in production?"</strong> → Yes, but add rate limiting, caching, monitoring</li>
                 <li><strong>"What if the tool call fails?"</strong> → Show error handling in actions.ts:132-142</li>
                 <li><strong>"How much does ClovaX cost?"</strong> → Point to NCP pricing page, discuss token counting</li>
+                <li><strong>"Which model should I use?"</strong> → HCX-005 for vision/multimodal, HCX-007 for complex reasoning with thinking</li>
               </ul>
             </div>
             <div>
@@ -357,7 +359,8 @@ export default function LessonPlanPage() {
                 <ul className="list-disc list-inside ml-4 space-y-1">
                   <li>What happens between tool_calls and the final response?</li>
                   <li>Why do we need a system message?</li>
-                  <li>What's the difference between HCX-003 and HCX-005?</li>
+                  <li>What's the difference between HCX-005 and HCX-007?</li>
+                  <li>When would you use HCX-005 vs HCX-007?</li>
                   <li>How would you add a new tool to News Researcher?</li>
                 </ul>
               </div>
